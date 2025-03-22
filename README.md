@@ -5,4 +5,4 @@ venv\Scripts\activate     # Windows
 
 pip install -r requirements.txt
 
-put your openai key
+create .env file and put your openai key: "OPENAI_API_KEY=your-key-here"
