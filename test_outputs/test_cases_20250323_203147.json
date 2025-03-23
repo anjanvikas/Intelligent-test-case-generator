@@ -1,0 +1,214 @@
+[
+  {
+    "id": "TC_001",
+    "title": "Numeric Input Validation",
+    "description": "Validate that the app allows numeric input (0-9)",
+    "preconditions": [],
+    "test_data": "5",
+    "steps": [
+      "Tap the number button '5'"
+    ],
+    "expected_result": "The number '5' is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": []
+  },
+  {
+    "id": "TC_002",
+    "title": "Numeric Input Error Handling",
+    "description": "Validate that the app handles non-numeric input",
+    "preconditions": [],
+    "test_data": "a",
+    "steps": [
+      "Try to input the character 'a'"
+    ],
+    "expected_result": "The app does not allow the input and displays an error message",
+    "type": "negative",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": []
+  },
+  {
+    "id": "TC_003",
+    "title": "Decimal Input Validation",
+    "description": "Validate that the app allows decimal input",
+    "preconditions": [],
+    "test_data": "5.3",
+    "steps": [
+      "Tap the number buttons '5', '.', '3'"
+    ],
+    "expected_result": "The decimal number '5.3' is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "FT_001"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_004",
+    "title": "Decimal Input Error Handling",
+    "description": "Validate that the app handles invalid decimal input",
+    "preconditions": [],
+    "test_data": "5..3",
+    "steps": [
+      "Try to input '5..3'"
+    ],
+    "expected_result": "The app does not allow the input and displays an error message",
+    "type": "negative",
+    "priority": "high",
+    "dependencies": [
+      "FT_001"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_005",
+    "title": "Addition Operation",
+    "description": "Validate that the app correctly performs addition",
+    "preconditions": [],
+    "test_data": "5+3",
+    "steps": [
+      "Input '5', '+', '3', and '='"
+    ],
+    "expected_result": "The result '8' is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "FT_001",
+      "FT_002"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_006",
+    "title": "Subtraction Operation",
+    "description": "Validate that the app correctly performs subtraction",
+    "preconditions": [],
+    "test_data": "5-3",
+    "steps": [
+      "Input '5', '-', '3', and '='"
+    ],
+    "expected_result": "The result '2' is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "FT_001",
+      "FT_002"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_007",
+    "title": "Multiplication Operation",
+    "description": "Validate that the app correctly performs multiplication",
+    "preconditions": [],
+    "test_data": "5*3",
+    "steps": [
+      "Input '5', '*', '3', and '='"
+    ],
+    "expected_result": "The result '15' is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "FT_001",
+      "FT_002"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_008",
+    "title": "Division Operation",
+    "description": "Validate that the app correctly performs division",
+    "preconditions": [],
+    "test_data": "6/3",
+    "steps": [
+      "Input '6', '/', '3', and '='"
+    ],
+    "expected_result": "The result '2' is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "FT_001",
+      "FT_002"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_009",
+    "title": "Divide-by-Zero Error",
+    "description": "Validate that the app correctly handles divide-by-zero",
+    "preconditions": [],
+    "test_data": "5/0",
+    "steps": [
+      "Input '5', '/', '0', and '='"
+    ],
+    "expected_result": "The app displays an error message 'Cannot divide by zero'",
+    "type": "negative",
+    "priority": "high",
+    "dependencies": [
+      "FT_006"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_010",
+    "title": "Real-time Input Display",
+    "description": "Validate that the app shows current input on the screen in real time",
+    "preconditions": [],
+    "test_data": "5+3",
+    "steps": [
+      "Input '5', '+'"
+    ],
+    "expected_result": "The screen displays '5+'",
+    "type": "functional",
+    "priority": "medium",
+    "dependencies": [
+      "FT_001",
+      "FT_002"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_011",
+    "title": "Clear Button Functionality",
+    "description": "Validate that the clear button resets input/result",
+    "preconditions": [],
+    "test_data": "5+3",
+    "steps": [
+      "Input '5', '+', '3', and '='",
+      "Tap the 'C' button"
+    ],
+    "expected_result": "The screen is cleared",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "FT_001",
+      "FT_002"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_012",
+    "title": "Result Display",
+    "description": "Validate that the result is shown after user taps '='",
+    "preconditions": [],
+    "test_data": "5+3",
+    "steps": [
+      "Input '5', '+', '3', and '='"
+    ],
+    "expected_result": "The result '8' is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "FT_001",
+      "FT_002",
+      "FT_003",
+      "FT_004",
+      "FT_005",
+      "FT_006"
+    ],
+    "assumptions": []
+  }
+]
