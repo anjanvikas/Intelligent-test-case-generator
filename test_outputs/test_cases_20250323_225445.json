@@ -1,0 +1,68 @@
+[
+  {
+    "id": "TC_001",
+    "title": "Verify error message when context length exceeds maximum limit",
+    "description": "This test case is designed to verify if the correct error message is displayed when the context length exceeds the maximum limit of 8192 tokens",
+    "preconditions": [
+      "The system should be up and running"
+    ],
+    "test_data": {
+      "context_length": 9518
+    },
+    "steps": [
+      "Send a request with a context length of 9518 tokens",
+      "Observe the response"
+    ],
+    "expected_result": "The system should return an error with message: 'This model's maximum context length is 8192 tokens. However, you requested 9518 tokens (5518 in the messages, 4000 in the completion). Please reduce the length of the messages or completion.'",
+    "type": "negative",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": [
+      "The system has a maximum context length limit of 8192 tokens"
+    ]
+  },
+  {
+    "id": "TC_002",
+    "title": "Verify no error message when context length is within maximum limit",
+    "description": "This test case is designed to verify if no error message is displayed when the context length is within the maximum limit of 8192 tokens",
+    "preconditions": [
+      "The system should be up and running"
+    ],
+    "test_data": {
+      "context_length": 8192
+    },
+    "steps": [
+      "Send a request with a context length of 8192 tokens",
+      "Observe the response"
+    ],
+    "expected_result": "The system should not return an error message",
+    "type": "positive",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": [
+      "The system has a maximum context length limit of 8192 tokens"
+    ]
+  },
+  {
+    "id": "TC_003",
+    "title": "Verify error message when context length is just above maximum limit",
+    "description": "This test case is designed to verify if the correct error message is displayed when the context length is just one token above the maximum limit of 8192 tokens",
+    "preconditions": [
+      "The system should be up and running"
+    ],
+    "test_data": {
+      "context_length": 8193
+    },
+    "steps": [
+      "Send a request with a context length of 8193 tokens",
+      "Observe the response"
+    ],
+    "expected_result": "The system should return an error with message: 'This model's maximum context length is 8192 tokens. However, you requested 8193 tokens. Please reduce the length of the messages or completion.'",
+    "type": "edge_case",
+    "priority": "medium",
+    "dependencies": [],
+    "assumptions": [
+      "The system has a maximum context length limit of 8192 tokens"
+    ]
+  }
+]

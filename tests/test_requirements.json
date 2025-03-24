@@ -1,0 +1,21 @@
+{
+  "identified_type": "Web Application",
+  "required_info": [
+    "Application URL",
+    "Login endpoint",
+    "Account overview endpoint",
+    "Valid registered user credentials",
+    "Invalid user credentials",
+    "User credentials with special characters",
+    "User credentials with leading and trailing spaces",
+    "User credentials for a user with no accounts"
+  ],
+  "suggested_framework": "Selenium for UI testing, JUnit for unit testing",
+  "template_requirements": [
+    "Setup and Teardown methods for initializing and closing the application",
+    "Test methods for each test case",
+    "Assertions to validate the expected results",
+    "Data providers or similar constructs for parameterized testing",
+    "Error handling and logging mechanisms"
+  ]
+}

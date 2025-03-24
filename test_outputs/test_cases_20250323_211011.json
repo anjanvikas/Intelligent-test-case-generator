@@ -1,0 +1,226 @@
+[
+  {
+    "id": "TC_001",
+    "title": "Numeric Input Validation",
+    "description": "Validate that the app accepts numeric input",
+    "preconditions": [],
+    "test_data": "5",
+    "steps": [
+      "Tap the number 5 button"
+    ],
+    "expected_result": "5 is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": []
+  },
+  {
+    "id": "TC_002",
+    "title": "Non-numeric Input Validation",
+    "description": "Validate that the app rejects non-numeric input",
+    "preconditions": [],
+    "test_data": "a",
+    "steps": [
+      "Try to input 'a'"
+    ],
+    "expected_result": "Error message is displayed",
+    "type": "negative",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": []
+  },
+  {
+    "id": "TC_003",
+    "title": "Decimal Input Validation",
+    "description": "Validate that the app accepts decimal input",
+    "preconditions": [],
+    "test_data": "5.5",
+    "steps": [
+      "Tap the number 5 button",
+      "Tap the . button",
+      "Tap the number 5 button"
+    ],
+    "expected_result": "5.5 is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_004",
+    "title": "Multiple Decimal Points Validation",
+    "description": "Validate that the app rejects input with multiple decimal points",
+    "preconditions": [],
+    "test_data": "5.5.5",
+    "steps": [
+      "Tap the number 5 button",
+      "Tap the . button",
+      "Tap the number 5 button",
+      "Tap the . button",
+      "Tap the number 5 button"
+    ],
+    "expected_result": "Error message is displayed",
+    "type": "negative",
+    "priority": "high",
+    "dependencies": [
+      "TC_003"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_005",
+    "title": "Addition Operation Validation",
+    "description": "Validate that the app correctly performs addition operation",
+    "preconditions": [],
+    "test_data": "5+5",
+    "steps": [
+      "Tap the number 5 button",
+      "Tap the + button",
+      "Tap the number 5 button",
+      "Tap the = button"
+    ],
+    "expected_result": "10 is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_006",
+    "title": "Subtraction Operation Validation",
+    "description": "Validate that the app correctly performs subtraction operation",
+    "preconditions": [],
+    "test_data": "5-3",
+    "steps": [
+      "Tap the number 5 button",
+      "Tap the - button",
+      "Tap the number 3 button",
+      "Tap the = button"
+    ],
+    "expected_result": "2 is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_007",
+    "title": "Multiplication Operation Validation",
+    "description": "Validate that the app correctly performs multiplication operation",
+    "preconditions": [],
+    "test_data": "5*3",
+    "steps": [
+      "Tap the number 5 button",
+      "Tap the * button",
+      "Tap the number 3 button",
+      "Tap the = button"
+    ],
+    "expected_result": "15 is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_008",
+    "title": "Division Operation Validation",
+    "description": "Validate that the app correctly performs division operation",
+    "preconditions": [],
+    "test_data": "6/3",
+    "steps": [
+      "Tap the number 6 button",
+      "Tap the / button",
+      "Tap the number 3 button",
+      "Tap the = button"
+    ],
+    "expected_result": "2 is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_009",
+    "title": "Divide-by-zero Error Validation",
+    "description": "Validate that the app correctly handles divide-by-zero error",
+    "preconditions": [],
+    "test_data": "5/0",
+    "steps": [
+      "Tap the number 5 button",
+      "Tap the / button",
+      "Tap the number 0 button",
+      "Tap the = button"
+    ],
+    "expected_result": "Error message 'Cannot divide by zero' is displayed",
+    "type": "edge_case",
+    "priority": "high",
+    "dependencies": [
+      "TC_008"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_010",
+    "title": "Real-time Input Display Validation",
+    "description": "Validate that the app correctly displays input in real time",
+    "preconditions": [],
+    "test_data": "5",
+    "steps": [
+      "Tap the number 5 button"
+    ],
+    "expected_result": "5 is displayed on the screen",
+    "type": "functional",
+    "priority": "medium",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_011",
+    "title": "Clear Button Functionality Validation",
+    "description": "Validate that the app correctly clears the input/result when C button is tapped",
+    "preconditions": [
+      "5 is displayed on the screen"
+    ],
+    "test_data": "",
+    "steps": [
+      "Tap the C button"
+    ],
+    "expected_result": "Screen is cleared",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": []
+  },
+  {
+    "id": "TC_012",
+    "title": "Result Display Validation",
+    "description": "Validate that the app correctly displays the result after calculation",
+    "preconditions": [],
+    "test_data": "5+5",
+    "steps": [
+      "Tap the number 5 button",
+      "Tap the + button",
+      "Tap the number 5 button",
+      "Tap the = button"
+    ],
+    "expected_result": "10 is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_005"
+    ],
+    "assumptions": []
+  }
+]

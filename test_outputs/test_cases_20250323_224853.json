@@ -1,0 +1,87 @@
+[
+  {
+    "id": "TC_001",
+    "title": "Validate error message for exceeding maximum context length",
+    "description": "This test case is designed to validate the error message when the maximum context length is exceeded",
+    "preconditions": [
+      "A model is available for testing",
+      "The model's maximum context length is set to 8192 tokens"
+    ],
+    "test_data": {
+      "messages": 7607,
+      "completion": 4000
+    },
+    "steps": [
+      "Send a request to the model with a total of 11607 tokens (7607 in the messages, 4000 in the completion)"
+    ],
+    "expected_result": {
+      "error": {
+        "message": "This model's maximum context length is 8192 tokens. However, you requested 11607 tokens (7607 in the messages, 4000 in the completion). Please reduce the length of the messages or completion.",
+        "type": "invalid_request_error",
+        "param": "messages",
+        "code": "context_length_exceeded"
+      }
+    },
+    "type": "validation",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": [
+      "The system correctly handles and displays error messages"
+    ]
+  },
+  {
+    "id": "TC_002",
+    "title": "Validate no error message for not exceeding maximum context length",
+    "description": "This test case is designed to validate that no error message is returned when the maximum context length is not exceeded",
+    "preconditions": [
+      "A model is available for testing",
+      "The model's maximum context length is set to 8192 tokens"
+    ],
+    "test_data": {
+      "messages": 4000,
+      "completion": 4000
+    },
+    "steps": [
+      "Send a request to the model with a total of 8000 tokens (4000 in the messages, 4000 in the completion)"
+    ],
+    "expected_result": {
+      "error": null
+    },
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": [
+      "The system correctly handles and displays error messages"
+    ]
+  },
+  {
+    "id": "TC_003",
+    "title": "Validate error message for exceeding maximum context length by one token",
+    "description": "This test case is designed to validate the error message when the maximum context length is exceeded by one token",
+    "preconditions": [
+      "A model is available for testing",
+      "The model's maximum context length is set to 8192 tokens"
+    ],
+    "test_data": {
+      "messages": 4096,
+      "completion": 4097
+    },
+    "steps": [
+      "Send a request to the model with a total of 8193 tokens (4096 in the messages, 4097 in the completion)"
+    ],
+    "expected_result": {
+      "error": {
+        "message": "This model's maximum context length is 8192 tokens. However, you requested 8193 tokens (4096 in the messages, 4097 in the completion). Please reduce the length of the messages or completion.",
+        "type": "invalid_request_error",
+        "param": "messages",
+        "code": "context_length_exceeded"
+      }
+    },
+    "type": "edge_case",
+    "priority": "medium",
+    "dependencies": [],
+    "assumptions": [
+      "The system correctly handles and displays error messages"
+    ]
+  }
+]

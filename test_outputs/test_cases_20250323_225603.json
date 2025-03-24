@@ -1,0 +1,68 @@
+[
+  {
+    "id": "TC_001",
+    "title": "Test model with context length within limit",
+    "description": "Test to ensure the model works correctly when the context length is within the maximum limit",
+    "preconditions": [
+      "Model is properly set up and running"
+    ],
+    "test_data": {
+      "messages": 4000,
+      "completion": 4000
+    },
+    "steps": [
+      "Send a request to the model with a total of 8000 tokens"
+    ],
+    "expected_result": "The model should process the request successfully without any error",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": [
+      "The model can handle up to 8192 tokens"
+    ]
+  },
+  {
+    "id": "TC_002",
+    "title": "Test model with context length exceeding limit",
+    "description": "Test to ensure the model returns an error when the context length exceeds the maximum limit",
+    "preconditions": [
+      "Model is properly set up and running"
+    ],
+    "test_data": {
+      "messages": 5066,
+      "completion": 4000
+    },
+    "steps": [
+      "Send a request to the model with a total of 9066 tokens"
+    ],
+    "expected_result": "The model should return an error with code 400 and message 'context_length_exceeded'",
+    "type": "negative",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": [
+      "The model can handle up to 8192 tokens"
+    ]
+  },
+  {
+    "id": "TC_003",
+    "title": "Test model with context length at limit",
+    "description": "Test to ensure the model works correctly when the context length is exactly at the maximum limit",
+    "preconditions": [
+      "Model is properly set up and running"
+    ],
+    "test_data": {
+      "messages": 4192,
+      "completion": 4000
+    },
+    "steps": [
+      "Send a request to the model with a total of 8192 tokens"
+    ],
+    "expected_result": "The model should process the request successfully without any error",
+    "type": "edge_case",
+    "priority": "medium",
+    "dependencies": [],
+    "assumptions": [
+      "The model can handle up to 8192 tokens"
+    ]
+  }
+]

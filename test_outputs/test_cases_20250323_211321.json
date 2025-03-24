@@ -1,0 +1,276 @@
+[
+  {
+    "id": "TC_001",
+    "title": "Numeric Input Test",
+    "description": "Test the numeric input functionality",
+    "preconditions": [],
+    "test_data": "5",
+    "steps": [
+      "Tap number button 5"
+    ],
+    "expected_result": "Number 5 is displayed",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": [
+      "User inputs are always intentional"
+    ]
+  },
+  {
+    "id": "TC_002",
+    "title": "Invalid Numeric Input Test",
+    "description": "Test the numeric input functionality with non-numeric character",
+    "preconditions": [],
+    "test_data": "a",
+    "steps": [
+      "Tap character 'a'"
+    ],
+    "expected_result": "Error message is displayed",
+    "type": "negative",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": [
+      "User inputs are always intentional"
+    ]
+  },
+  {
+    "id": "TC_003",
+    "title": "Decimal Input Test",
+    "description": "Test the decimal input functionality",
+    "preconditions": [],
+    "test_data": "5.3",
+    "steps": [
+      "Tap number button 5",
+      "Tap decimal point",
+      "Tap number button 3"
+    ],
+    "expected_result": "Number 5.3 is displayed",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": [
+      "User inputs are always intentional"
+    ]
+  },
+  {
+    "id": "TC_004",
+    "title": "Invalid Decimal Input Test",
+    "description": "Test the decimal input functionality with multiple decimal points",
+    "preconditions": [],
+    "test_data": "5.3.2",
+    "steps": [
+      "Tap number button 5",
+      "Tap decimal point",
+      "Tap number button 3",
+      "Tap decimal point",
+      "Tap number button 2"
+    ],
+    "expected_result": "Error message is displayed",
+    "type": "negative",
+    "priority": "high",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": [
+      "User inputs are always intentional"
+    ]
+  },
+  {
+    "id": "TC_005",
+    "title": "Addition Operation Test",
+    "description": "Test the addition operation functionality",
+    "preconditions": [],
+    "test_data": "5+3",
+    "steps": [
+      "Tap number button 5",
+      "Tap '+' operator",
+      "Tap number button 3",
+      "Tap '='"
+    ],
+    "expected_result": "Number 8 is displayed",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001",
+      "TC_003"
+    ],
+    "assumptions": [
+      "User inputs are always intentional"
+    ]
+  },
+  {
+    "id": "TC_006",
+    "title": "Subtraction Operation Test",
+    "description": "Test the subtraction operation functionality",
+    "preconditions": [],
+    "test_data": "5-3",
+    "steps": [
+      "Tap number button 5",
+      "Tap '-' operator",
+      "Tap number button 3",
+      "Tap '='"
+    ],
+    "expected_result": "Number 2 is displayed",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001",
+      "TC_003"
+    ],
+    "assumptions": [
+      "User inputs are always intentional"
+    ]
+  },
+  {
+    "id": "TC_007",
+    "title": "Multiplication Operation Test",
+    "description": "Test the multiplication operation functionality",
+    "preconditions": [],
+    "test_data": "5*3",
+    "steps": [
+      "Tap number button 5",
+      "Tap '\u00d7' operator",
+      "Tap number button 3",
+      "Tap '='"
+    ],
+    "expected_result": "Number 15 is displayed",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001",
+      "TC_003"
+    ],
+    "assumptions": [
+      "User inputs are always intentional"
+    ]
+  },
+  {
+    "id": "TC_008",
+    "title": "Division Operation Test",
+    "description": "Test the division operation functionality",
+    "preconditions": [],
+    "test_data": "6/3",
+    "steps": [
+      "Tap number button 6",
+      "Tap '\u00f7' operator",
+      "Tap number button 3",
+      "Tap '='"
+    ],
+    "expected_result": "Number 2 is displayed",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001",
+      "TC_003"
+    ],
+    "assumptions": [
+      "User inputs are always intentional"
+    ]
+  },
+  {
+    "id": "TC_009",
+    "title": "Divide-by-Zero Error Test",
+    "description": "Test the divide-by-zero error functionality",
+    "preconditions": [],
+    "test_data": "5/0",
+    "steps": [
+      "Tap number button 5",
+      "Tap '\u00f7' operator",
+      "Tap number button 0",
+      "Tap '='"
+    ],
+    "expected_result": "Error message: Cannot divide by zero is displayed",
+    "type": "negative",
+    "priority": "high",
+    "dependencies": [
+      "TC_008"
+    ],
+    "assumptions": [
+      "User inputs are always intentional"
+    ]
+  },
+  {
+    "id": "TC_010",
+    "title": "Real-Time Input Display Test",
+    "description": "Test the real-time input display functionality",
+    "preconditions": [],
+    "test_data": "5+3",
+    "steps": [
+      "Tap number button 5",
+      "Tap '+' operator",
+      "Tap number button 3"
+    ],
+    "expected_result": "Number 5+3 is displayed",
+    "type": "performance",
+    "priority": "medium",
+    "dependencies": [
+      "TC_001",
+      "TC_003",
+      "TC_005",
+      "TC_006",
+      "TC_007",
+      "TC_008"
+    ],
+    "assumptions": [
+      "User inputs are always intentional"
+    ]
+  },
+  {
+    "id": "TC_011",
+    "title": "Clear Button Test",
+    "description": "Test the clear button functionality",
+    "preconditions": [],
+    "test_data": "5+3",
+    "steps": [
+      "Tap number button 5",
+      "Tap '+' operator",
+      "Tap number button 3",
+      "Tap 'C'"
+    ],
+    "expected_result": "All data is cleared",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001",
+      "TC_003",
+      "TC_005",
+      "TC_006",
+      "TC_007",
+      "TC_008",
+      "TC_010"
+    ],
+    "assumptions": [
+      "User inputs are always intentional"
+    ]
+  },
+  {
+    "id": "TC_012",
+    "title": "Result Display Test",
+    "description": "Test the result display functionality",
+    "preconditions": [],
+    "test_data": "5+3",
+    "steps": [
+      "Tap number button 5",
+      "Tap '+' operator",
+      "Tap number button 3",
+      "Tap '='"
+    ],
+    "expected_result": "Number 8 is displayed",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001",
+      "TC_003",
+      "TC_005",
+      "TC_006",
+      "TC_007",
+      "TC_008",
+      "TC_010"
+    ],
+    "assumptions": [
+      "User inputs are always intentional"
+    ]
+  }
+]

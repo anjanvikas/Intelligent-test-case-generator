@@ -1,0 +1,164 @@
+[
+  {
+    "id": "TC_001",
+    "title": "Successful User Login",
+    "description": "Test if a user can successfully login with valid credentials",
+    "preconditions": [
+      "User is registered"
+    ],
+    "test_data": {
+      "username": "testUser",
+      "password": "testPassword"
+    },
+    "steps": [
+      "Enter username",
+      "Enter password",
+      "Submit login form"
+    ],
+    "expected_result": "User is logged in",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": [
+      "User has already registered"
+    ]
+  },
+  {
+    "id": "TC_002",
+    "title": "Unsuccessful User Login - Invalid Username",
+    "description": "Test if the system correctly handles login attempts with invalid usernames",
+    "preconditions": [
+      "User is registered"
+    ],
+    "test_data": {
+      "username": "invalidUser",
+      "password": "testPassword"
+    },
+    "steps": [
+      "Enter username",
+      "Enter password",
+      "Submit login form"
+    ],
+    "expected_result": "Error message is displayed",
+    "type": "negative",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": [
+      "User has already registered"
+    ]
+  },
+  {
+    "id": "TC_003",
+    "title": "Unsuccessful User Login - Invalid Password",
+    "description": "Test if the system correctly handles login attempts with invalid passwords",
+    "preconditions": [
+      "User is registered"
+    ],
+    "test_data": {
+      "username": "testUser",
+      "password": "invalidPassword"
+    },
+    "steps": [
+      "Enter username",
+      "Enter password",
+      "Submit login form"
+    ],
+    "expected_result": "Error message is displayed",
+    "type": "negative",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": [
+      "User has already registered"
+    ]
+  },
+  {
+    "id": "TC_004",
+    "title": "User Login - Special Characters",
+    "description": "Test if the system correctly handles login attempts with special characters in username and password",
+    "preconditions": [
+      "User is registered"
+    ],
+    "test_data": {
+      "username": "testUser!@#",
+      "password": "testPassword!@#"
+    },
+    "steps": [
+      "Enter username",
+      "Enter password",
+      "Submit login form"
+    ],
+    "expected_result": "User is logged in",
+    "type": "edge_case",
+    "priority": "medium",
+    "dependencies": [],
+    "assumptions": [
+      "User has already registered"
+    ]
+  },
+  {
+    "id": "TC_005",
+    "title": "User Login - Leading and Trailing Spaces",
+    "description": "Test if the system correctly handles login attempts with leading and trailing spaces in username and password",
+    "preconditions": [
+      "User is registered"
+    ],
+    "test_data": {
+      "username": " testUser ",
+      "password": " testPassword "
+    },
+    "steps": [
+      "Enter username",
+      "Enter password",
+      "Submit login form"
+    ],
+    "expected_result": "User is logged in",
+    "type": "edge_case",
+    "priority": "medium",
+    "dependencies": [],
+    "assumptions": [
+      "User has already registered"
+    ]
+  },
+  {
+    "id": "TC_006",
+    "title": "Account Overview - Display All Accounts",
+    "description": "Test if the system correctly displays all accounts associated with the logged in user",
+    "preconditions": [
+      "User is logged in"
+    ],
+    "test_data": {},
+    "steps": [
+      "Navigate to account overview page"
+    ],
+    "expected_result": "List of user's accounts is displayed",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": [
+      "User is logged in"
+    ]
+  },
+  {
+    "id": "TC_007",
+    "title": "Account Overview - No Accounts",
+    "description": "Test if the system correctly handles cases where the user has no accounts",
+    "preconditions": [
+      "User is logged in"
+    ],
+    "test_data": {},
+    "steps": [
+      "Navigate to account overview page"
+    ],
+    "expected_result": "Message indicating no accounts is displayed",
+    "type": "edge_case",
+    "priority": "medium",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": [
+      "User is logged in"
+    ]
+  }
+]

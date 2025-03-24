@@ -1,0 +1,222 @@
+[
+  {
+    "id": "TC_001",
+    "title": "Numeric Input Test",
+    "description": "Test if the app allows numeric input",
+    "preconditions": [],
+    "test_data": "5",
+    "steps": [
+      "Launch the app",
+      "Tap number 5"
+    ],
+    "expected_result": "5 is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": []
+  },
+  {
+    "id": "TC_002",
+    "title": "Non-Numeric Input Test",
+    "description": "Test if the app rejects non-numeric input",
+    "preconditions": [],
+    "test_data": "a",
+    "steps": [
+      "Launch the app",
+      "Try to input 'a'"
+    ],
+    "expected_result": "Input is rejected",
+    "type": "negative",
+    "priority": "high",
+    "dependencies": [],
+    "assumptions": []
+  },
+  {
+    "id": "TC_003",
+    "title": "Decimal Input Test",
+    "description": "Test if the app allows decimal input",
+    "preconditions": [],
+    "test_data": "5.5",
+    "steps": [
+      "Launch the app",
+      "Tap number 5",
+      "Tap .",
+      "Tap number 5"
+    ],
+    "expected_result": "5.5 is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_004",
+    "title": "Addition Operation Test",
+    "description": "Test if the app correctly performs addition",
+    "preconditions": [],
+    "test_data": "5, 3",
+    "steps": [
+      "Launch the app",
+      "Tap number 5",
+      "Tap +",
+      "Tap number 3",
+      "Tap ="
+    ],
+    "expected_result": "8 is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_005",
+    "title": "Subtraction Operation Test",
+    "description": "Test if the app correctly performs subtraction",
+    "preconditions": [],
+    "test_data": "5, 3",
+    "steps": [
+      "Launch the app",
+      "Tap number 5",
+      "Tap -",
+      "Tap number 3",
+      "Tap ="
+    ],
+    "expected_result": "2 is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_006",
+    "title": "Multiplication Operation Test",
+    "description": "Test if the app correctly performs multiplication",
+    "preconditions": [],
+    "test_data": "5, 3",
+    "steps": [
+      "Launch the app",
+      "Tap number 5",
+      "Tap \u00d7",
+      "Tap number 3",
+      "Tap ="
+    ],
+    "expected_result": "15 is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_007",
+    "title": "Division Operation Test",
+    "description": "Test if the app correctly performs division",
+    "preconditions": [],
+    "test_data": "6, 3",
+    "steps": [
+      "Launch the app",
+      "Tap number 6",
+      "Tap \u00f7",
+      "Tap number 3",
+      "Tap ="
+    ],
+    "expected_result": "2 is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_008",
+    "title": "Divide-by-zero Error Test",
+    "description": "Test if the app correctly handles divide-by-zero",
+    "preconditions": [],
+    "test_data": "5, 0",
+    "steps": [
+      "Launch the app",
+      "Tap number 5",
+      "Tap \u00f7",
+      "Tap number 0",
+      "Tap ="
+    ],
+    "expected_result": "Error message 'Cannot divide by zero' is displayed",
+    "type": "edge_case",
+    "priority": "high",
+    "dependencies": [
+      "TC_007"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_009",
+    "title": "Real-time Input Display Test",
+    "description": "Test if the app shows current input on the screen in real time",
+    "preconditions": [],
+    "test_data": "5, 3",
+    "steps": [
+      "Launch the app",
+      "Tap number 5",
+      "Tap +",
+      "Tap number 3"
+    ],
+    "expected_result": "5+3 is displayed on the screen",
+    "type": "functional",
+    "priority": "medium",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_010",
+    "title": "Clear Button Test",
+    "description": "Test if the app correctly clears input/result",
+    "preconditions": [],
+    "test_data": "5, 3",
+    "steps": [
+      "Launch the app",
+      "Tap number 5",
+      "Tap +",
+      "Tap number 3",
+      "Tap C"
+    ],
+    "expected_result": "Screen is cleared",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001"
+    ],
+    "assumptions": []
+  },
+  {
+    "id": "TC_011",
+    "title": "Result Display Test",
+    "description": "Test if the app correctly shows result after calculation",
+    "preconditions": [],
+    "test_data": "5, 3",
+    "steps": [
+      "Launch the app",
+      "Tap number 5",
+      "Tap +",
+      "Tap number 3",
+      "Tap ="
+    ],
+    "expected_result": "8 is displayed on the screen",
+    "type": "functional",
+    "priority": "high",
+    "dependencies": [
+      "TC_001",
+      "TC_004"
+    ],
+    "assumptions": []
+  }
+]
